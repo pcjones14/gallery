@@ -1,0 +1,4 @@
+<h1><%= @post.title %></h1>
+<p><%= image_tag @post.photo.url(:xlarge) %></p>
+<p><%= @post.caption %></p>
+<p><%= link_to "back", posts_all_thumbnails_path %></p>

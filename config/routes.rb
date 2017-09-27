@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'dummy#index'
+  root 'posts#all_thumbnails'
 
-  get 'posts/index'
-  get 'posts/new'
-  get 'posts/edit'
-  get 'posts/view'
-  get 'posts/thumbnails'  
-  get 'dummy/index'
+  get 'posts/all_thumbnails'
+  get 'posts/collections'
 
   resources :posts
+  resources :collections
 
 end

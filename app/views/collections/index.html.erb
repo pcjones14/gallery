@@ -1,0 +1,3 @@
+<% @all_collections.each do |collection| %>
+	<h2><%= link_to collection.title, posts_collections_path(collection_id: collection.id) %></h2>
+<% end %>

@@ -4,7 +4,8 @@ class PostsController < ApplicationController
     @all_posts = Post.all
   end
 
-  def view
+  def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -37,8 +38,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def thumbnails
-    @all_posts = Post.all
+  def all_thumbnails
+    @posts = Post.all
+  end
+
+  def collections
+    @posts = Post.collection_is(params[:collection_id])
   end
 
   private

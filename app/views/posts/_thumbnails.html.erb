@@ -1,5 +1,5 @@
 <div class="thumbnail-container">
-  <% @all_posts.each do |post| %>
+  <% @posts.each do |post| %>
     <div class="widget">
       <div class="thumbnail">
         <%= link_to image_tag(post.photo.url(:thumb), class: "thumb"), post_path(post.id) %>
