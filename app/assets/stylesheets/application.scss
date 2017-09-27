@@ -1,0 +1,96 @@
+/* global styles */
+
+html {
+  background-color: #333;
+  height: 100%;
+}
+
+body {
+  background-color: #555;
+  font-family: 'Roboto', sans-serif;
+  width: 992px;
+  margin: 0 auto;
+  min-height: 100%;
+ }
+
+body, h1, h2, h3, a, p {
+  color: #DDD;
+}
+
+a:hover {
+  color: #FFF;
+}
+
+/* navigation */
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+  line-height: 50px;
+  border-bottom: 3px solid #333;
+}
+
+nav li:last-child {
+  border-right: 3px solid #333;
+}
+
+nav a {
+  display: block;
+  padding: 12px;
+  height: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.45em;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+nav .title {
+  font-size: 1.5em;
+}
+
+/* containers */
+
+.container {
+  padding: 1px 50px;
+  clear: both;
+}
+
+.thumbnail-container {
+  padding: 20px;
+}
+
+/* thumbnail gallery */
+
+.widget {
+  float: left;
+  margin: 0 15px 28px;
+}
+
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+  border: 2px solid #333;
+}
+
+.thumbnail img {
+  max-width: 100%;
+  
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.thumbnail:hover img {
+  -moz-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}

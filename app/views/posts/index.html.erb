@@ -1,0 +1,11 @@
+<div class="text-center">
+  <% @all_posts.each do |post| %>
+    <h1><%= post.title %></h1>
+    <p><%= image_tag post.photo.url(:xlarge), class: "img-responsive center-block" %></p>
+    <p><%= post.caption %></p>
+    <p><%= link_to "Edit", edit_post_path(post.id) %> | <%= link_to "Delete", post_path(post.id), method: :delete %></p>
+    <% unless post == @all_posts.last %>
+      <hr />
+    <% end %>
+  <% end %>
+</div>

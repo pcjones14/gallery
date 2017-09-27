@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_for(@post, html: {class: "form-group"}) do |f| %>
+      <div class="form-group"><label>Title:</label><%= f.text_field :title, class: "form-control" %></div>
+      <div class="form-group"><label>Caption:</label><%= f.text_area :caption, class: "form-control" %></div>
+      <div class="form-group"><label>Image:</label><%= f.file_field :photo %><p class="help-block">Image can be whatever freaking size you want.</p></div>
+      <p><%= f.button :Submit, type: "submit", value: "Submit", class: "btn btn-default" %></p>
+    <% end %>
+  </div>
+</div>
