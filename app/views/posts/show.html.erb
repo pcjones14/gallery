@@ -17,5 +17,5 @@
   </div>
   <h1><%= @post.title %></h1>
   <p><%= @post.caption %></p>
-  <p><%= link_to "back", posts_all_thumbnails_path %> | <%= link_to "edit", edit_post_path(@post.id) %></p>
+  <p><%= link_to "back", posts_all_thumbnails_path %><% if authenticated? %> | <%= link_to "edit", edit_post_path(@post.id) %><% end %></p>
 </div>

@@ -10,6 +10,10 @@ $nav-arrows: #CCC;
 $nav-arrows-hover: #EEE;
 
 /* global styles */
+html {
+  background-color: #FCFCFC;
+}
+
 body {
   width: 1200px;
   margin: 0 auto;
@@ -19,6 +23,33 @@ body {
 
 .clear {
   clear: both;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+/* alert boxes */
+.alert {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  color: #0D0;
+  background-color: #EFE;
+  border: 1px solid #0D0;
+}
+
+.alert-danger {
+  color: #D00;
+  background-color: #FEE;
+  border: 1px solid #D00;
 }
 
 /* nav stuff */
@@ -87,6 +118,65 @@ nav a:hover {
 
 .nav-arrows a:hover {
   color: $nav-arrows-hover;
+}
+
+/* form stuff */
+.form-control {
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px 0;
+  padding: 14px 20px;
+}
+
+.form-text {
+  width: 50%;
+}
+
+.form-textarea {
+  width: 50%;
+}
+
+.form-image {
+  display: block;
+  margin: 10px 0;
+}
+
+.form-button {
+  width: 50%;
+}
+
+/* collections */
+
+.collections-list{
+  width: 250px;
+  height: 250px;
+  background-color: #EEE;
+  margin: 0 10px 10px 0;
+  float: left;
+  transition: all 0.3s;
+}
+
+.collections-list:hover {
+  background-color: #F4F4F4;
+}
+
+.collections-list h2 {
+  display: inline;
+  vertical-align: middle;
+}
+
+.collections-list a {
+  text-decoration: none;
+  display: block;
+  padding: 25px;
+  height: 250px;
+  color: $text;
+  transition: all 0.3s;
+}
+
+.collections-list a:hover {
+  color: $ahover;
 }
 
 /* html {

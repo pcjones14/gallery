@@ -1,4 +1,4 @@
 <%= form_for @collection do |f| %>
-  <p><label for="collection_title">Title: </label><%= f.text_field :title %></p>
-  <p><%= f.submit %></p>
+  <p><label for="collection_title">Title: </label><%= f.text_field :title, class: "form-control form-text" %></p>
+  <p><%= f.submit :Submit, class: "form-control form-button" %></p>
 <% end %>

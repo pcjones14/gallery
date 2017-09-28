@@ -1,7 +1,7 @@
 <%= form_for(@post) do |f| %>
-  <p><label for="post_title">Title:</label></p><p><%= f.text_field :title, class: "text-input" %></p>
-  <p><label>Caption:</label></p><p><%= f.text_area :caption, class: "form-control", rows: 20, cols: 40 %></p>
-  <p><label>Image:</label></p><p><%= f.file_field :photo %></p>
-  <p><label>Collection</label></p><p><%= f.select :collection_id, options_for_select(@options_array), {}, {class: "btn"} %></p>
-  <p><%= f.button :Submit, type: "submit", value: "Submit", class: "btn" %></p>
+  <label for="post_title">Title:</label><%= f.text_field :title, class: "form-control form-text" %>
+  <label for="post_caption">Caption:</label><%= f.text_area :caption, class: "form-control form-textarea", rows: 20, cols: 40 %>
+  <label for="post_collection_id">Collection</label><%= f.select :collection_id, options_for_select(@options_array), {}, {class: "form-control form-text"} %>
+  <label for="post_photo">Image:</label><%= f.file_field :photo, class: "form-image" %>
+  <%= f.button :Submit, type: "submit", value: "Submit", class: "form-control form-button" %>
 <% end %>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    redirect_to root_path
     @all_posts = Post.all
   end
 
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    authenticate()
     @post = Post.new
     @options_array = []
     Collection.all.each do |category|
@@ -21,14 +23,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    authenticate()
     if Post.create!(post_params)
-      redirect_to posts_path
+      redirect_to root_path
     else
       redirect_to :back
     end
   end
 
   def edit
+    authenticate()
     @post = Post.find(params[:id])
     @options_array = []
     Collection.all.each do |category|
@@ -37,19 +41,21 @@ class PostsController < ApplicationController
   end
 
   def update
+    authenticate()
     post = Post.find(params[:id])
     if post.update(post_params)
       flash[:success] = "Photo \"#{params[:post][:title]}\" successfully updated"
-      redirect_to posts_path
+      redirect_to root_path
     end
   end
 
   def destroy
+    authenticate()
     post = Post.find(params[:id])
     post_title = post.title
     if post.destroy
       flash[:success] = "Photo \"#{post_title}\" successfully deleted"
-      redirect_to posts_path
+      redirect_to root_path
     end
   end
 
