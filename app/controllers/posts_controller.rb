@@ -6,13 +6,17 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+
+    @next = Post.order(created_at: :asc).where("created_at > ?", @post.created_at).first
+    @previous = Post.order(created_at: :asc).where("created_at < ?", @post.created_at).last
+
   end
 
   def new
     @post = Post.new
     @options_array = []
     Collection.all.each do |category|
-      @options_array += [category.title]
+      @options_array += [[category.title, category.id]]
     end
   end
 
@@ -26,6 +30,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @options_array = []
+    Collection.all.each do |category|
+      @options_array += [[category.title, category.id]]
+    end
   end
 
   def update
@@ -46,7 +54,7 @@ class PostsController < ApplicationController
   end
 
   def all_thumbnails
-    @posts = Post.all.order(:created_at)
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def collections
@@ -56,7 +64,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :caption, :photo)
+    params.require(:post).permit(:title, :caption, :photo, :collection_id)
   end
 
 end

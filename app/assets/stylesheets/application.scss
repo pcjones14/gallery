@@ -1,6 +1,95 @@
-/* global styles */
+/* quick reset */
+*{box-sizing: border-box; margin: 0; padding: 0}
+body, html{height: 100%;}
 
-html {
+/* variables */
+
+$text: #292929;
+$ahover: #888;
+$nav-arrows: #CCC;
+$nav-arrows-hover: #EEE;
+
+/* global styles */
+body {
+  width: 1200px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  color: $text;
+}
+
+.clear {
+  clear: both;
+}
+
+/* nav stuff */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+  line-height: 50px;
+  padding: 30px;
+  font-size: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: $text;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: $ahover;
+}
+
+/* container */
+.container {
+  clear: both;
+  padding: 0 30px;
+}
+
+/* thumbnails */
+.thumbnail {
+  float: left;
+  height: 250px;
+  width: 250px;
+  margin: 0 10px 10px 0;
+  transition: all 0.3s;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+/* show */
+
+.show {
+  text-align: center;
+}
+
+.nav-arrows {
+  font-size: 100px;
+  color: $nav-arrows;
+}
+
+.nav-arrows, .show img {
+  vertical-align: middle;
+}
+
+.nav-arrows a {
+  text-decoration: none;
+  color: $nav-arrows;
+  transition: all 0.3s;
+}
+
+.nav-arrows a:hover {
+  color: $nav-arrows-hover;
+}
+
+/* html {
   background-color: #333;
   height: 100%;
 }
@@ -20,8 +109,6 @@ body, h1, h2, h3, a, p {
 a:hover {
   color: #FFF;
 }
-
-/* navigation */
 
 nav ul {
   list-style-type: none;
@@ -56,8 +143,6 @@ nav .title {
   font-size: 1.5em;
 }
 
-/* containers */
-
 .container {
   padding: 1px 50px;
   clear: both;
@@ -66,8 +151,6 @@ nav .title {
 .thumbnail-container {
   padding: 20px;
 }
-
-/* thumbnail gallery */
 
 .widget {
   float: left;
@@ -94,3 +177,15 @@ nav .title {
   -webkit-transform: scale(1.03);
   transform: scale(1.03);
 }
+
+.show {
+  text-align: center;
+}
+
+form p {
+  line-height: 0;
+}
+
+.text-input, .btn {
+  padding: 8px;
+} */

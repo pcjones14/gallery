@@ -1,4 +1,21 @@
-<h1><%= @post.title %></h1>
-<p><%= image_tag @post.photo.url(:xlarge) %></p>
-<p><%= @post.caption %></p>
-<p><%= link_to "back", posts_all_thumbnails_path %></p>
+<div class="show">
+  <div class="image-container">
+    <p>
+      <% if !@next.nil? %>
+        <span class="nav-arrows"><%= link_to "&lt;".html_safe, post_path(@next.id) %>&nbsp;</span>
+      <% else %>
+        <span class="nav-arrows" style="color:#EEE">&lt;&nbsp;</span>
+      <% end %>
+      <%= image_tag @post.photo.url(:xlarge) %>
+      <% if !@previous.nil? %>
+        <span class="nav-arrows">&nbsp;<%= link_to "&gt;".html_safe, post_path(@previous.id) %></span>
+      <% else %>
+        <span class="nav-arrows" style="color:#EEE">&nbsp;&gt;</span>
+      <% end %>
+    </p>
+    <p class="clear">&nbsp;</p>
+  </div>
+  <h1><%= @post.title %></h1>
+  <p><%= @post.caption %></p>
+  <p><%= link_to "back", posts_all_thumbnails_path %> | <%= link_to "edit", edit_post_path(@post.id) %></p>
+</div>

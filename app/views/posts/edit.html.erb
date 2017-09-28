@@ -1,2 +1,2 @@
-<h1>Editing post</h1>
+<h1>Editing post <%= link_to "(delete)", post_path(@post.id), method: :delete %></h1>
 <%= render "form" %>
