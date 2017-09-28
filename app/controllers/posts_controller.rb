@@ -10,11 +10,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @options_array = []
+    Collection.all.each do |category|
+      @options_array += [category.title]
+    end
   end
 
   def create
-    Post.create(post_params)
-    redirect_to posts_path
+    if Post.create!(post_params)
+      redirect_to posts_path
+    else
+      redirect_to :back
+    end
   end
 
   def edit
@@ -39,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def all_thumbnails
-    @posts = Post.all
+    @posts = Post.all.order(:created_at)
   end
 
   def collections
