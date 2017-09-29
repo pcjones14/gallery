@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170927201410) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "collections", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170927201410) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer "collection_id"
+    t.bigint "collection_id"
     t.index ["collection_id"], name: "index_posts_on_collection_id"
   end
 
